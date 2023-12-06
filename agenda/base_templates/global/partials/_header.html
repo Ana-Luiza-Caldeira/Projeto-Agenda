@@ -8,32 +8,32 @@
         <ul class="menu-list">
 
             {% if user.is_authenticated %}
-                <li class="menu-item">
-                    <a href="{% url 'contact:create' %}" class="menu-link">
-                        Criar Contato
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{% url 'contact:user_update' %}" class="menu-link">
-                        Perfil
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{% url 'contact:logout' %}" class="menu-link">
-                        Sair
-                    </a>
-                </li>
+            <li class="menu-item">
+                <a href="{% url 'contact:create' %}" class="menu-link">
+                    Criar Contato
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{% url 'contact:user_update' %}" class="menu-link">
+                    Perfil
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{% url 'contact:logout' %}" class="menu-link">
+                    Logout
+                </a>
+            </li>
             {% else %}
-                <li class="menu-item">
-                    <a href="{% url 'contact:login' %}" class="menu-link">
-                        Entrar
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{% url 'contact:register' %}" class="menu-link">
-                        Criar Usuário
-                    </a>
-                </li>
+            <li class="menu-item">
+                <a href="{% url 'contact:login' %}" class="menu-link">
+                    Login
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="{% url 'contact:register' %}" class="menu-link">
+                    Criar Usuário
+                </a>
+            </li>
             {% endif %}
 
             <!-- <li class="menu-item">
@@ -46,14 +46,8 @@
     </nav>
     <div class="search">
         <form action="{% url 'contact:search' %}" method="GET">
-            <input 
-                type="search"
-                class="search-input"
-                placeholder="Pesquisar"
-                id="search"
-                name="q"
-                value="{{ search_value }}"
-            >
+            <input type="search" class="search-input" placeholder="Pesquisar" id="search" name="q"
+                value="{{ search_value }}">
         </form>
     </div>
 </header>
