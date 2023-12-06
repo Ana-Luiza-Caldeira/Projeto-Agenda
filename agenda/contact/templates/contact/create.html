@@ -1,0 +1,45 @@
+<!-- puxar o template global -->
+{% extends 'global/base.html' %}
+
+{% block content %}
+    <div class="form-wrapper">
+
+        <h2>Contato</h2>
+
+        <form 
+        action="{{ form_action }}"
+        method="POST"
+        enctype="multipart/form-data"
+        >
+        {% csrf_token %}
+        <div class="form-content">
+            {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {{ field.errors }}
+
+                {% if field.help_text %}
+                    <p class="help-text">{{ field.help_text }}</p>
+                {% endif %}
+
+                {% if field.name == 'picture' and field.value.url %}
+                    <div class="form-group">
+                        <img src="{{ field.value.url }}" alt="">
+                    </div>
+                {% endif %}
+                
+                <!-- <input type="text" name="first_name" maxlength="255" id="id_first_name"> -->
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="form-content">
+            <div class="form-group">
+            <button class="btn" type="submit">Send</button>
+            </div>
+        </div>
+
+        </form>
+    </div>
+{% endblock content %}
