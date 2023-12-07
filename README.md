@@ -1,2 +1,2 @@
 # Projeto-Agenda
-<h2>Projeto feito para fins de teste de commits entre colaboradores.</h2>
+<h2>Projeto feito para fins de testes de commits entre colaboradores.</h2>
